@@ -14,9 +14,9 @@ pipeline {
             }
         }
         
-        stage('test') {
+        stage('quality') {
         	steps {
-        	sh ' mvn test ' 
+        	sh ' mvn sonar:sonar ' 
         	}
         }
         stage('build') {
