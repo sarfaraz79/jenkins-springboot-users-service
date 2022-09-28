@@ -19,7 +19,7 @@ pipeline {
         	sh ' mvn test ' 
         	}
         }
-        stage('jar') {
+        stage('build') {
             steps {
                 sh 'mvn package -DskipTests=true'
             }
