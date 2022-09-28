@@ -13,13 +13,13 @@ pipeline {
                 sh 'mvn compile'
             }
         }
-        /*
+        
         stage('quality') {
         	steps {
         	sh ' mvn sonar:sonar ' 
         	}
         }
-        */
+        
         stage('build') {
             steps {
                 sh 'mvn package -DskipTests=true'
@@ -28,7 +28,7 @@ pipeline {
         stage('dockersize') {
         steps { 
         sh 'docker build -t user-service:latest .'
+            }
        }
-     }
    }
  }
