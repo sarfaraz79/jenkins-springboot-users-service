@@ -20,7 +20,7 @@ pipeline {
                 sh 'mvn compile'
             }
         }
-        /*
+       
         stage('quality') {
         	steps {
         	sh ' mvn sonar:sonar ' 
@@ -45,7 +45,7 @@ pipeline {
        			sh 'curl -i http://localhost:7070/api/users'
        }
      }
-     */
+    
      stage ('docker publish') {
      steps { 
      		withDockerRegistry([credentialsId: 'docker_creds' , url: '']) {
